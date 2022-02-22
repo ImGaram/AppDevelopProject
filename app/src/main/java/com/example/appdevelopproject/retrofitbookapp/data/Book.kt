@@ -8,5 +8,6 @@ data class Book(
     @SerializedName("author")var author: String?,    // 저자
     @SerializedName("coverLargeUrl")var coverLargeUrl: String?, // 책 이미지
     @SerializedName("mobileLink")var mobileLink: String?,    // 모바일 주소
-    @SerializedName("customerReviewRank")var customerReviewRank: Float?   // 평점
+    @SerializedName("customerReviewRank")var customerReviewRank: Float?,   // 평점
+    @SerializedName("rank") var rank: String?  // 순위
 )
