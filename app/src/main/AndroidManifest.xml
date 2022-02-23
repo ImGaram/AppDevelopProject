@@ -13,17 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDevelopProject">
         <activity
-            android:name=".retrofitbookapp.BookInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RetrofitActivity"
-            android:exported="true">
+            android:name=".SharedPreferenceActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".retrofitbookapp.BookInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RetrofitActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
