@@ -1,5 +1,7 @@
 package com.example.appdevelopproject.retrofitbookapp.recyclerview
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -8,10 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appdevelopproject.R
 import com.example.appdevelopproject.retrofitbookapp.App
+import com.example.appdevelopproject.retrofitbookapp.BookInfoActivity
 import com.example.appdevelopproject.retrofitbookapp.Constants.TAG
 import com.example.appdevelopproject.retrofitbookapp.data.Book
 
 class BestSellerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+
+    private lateinit var context: Context
 
     private val titleText = itemView.findViewById<TextView>(R.id.book_title_text)
     private val rankText = itemView.findViewById<TextView>(R.id.book_ranking_text)
@@ -22,6 +27,22 @@ class BestSellerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     fun bindItem(bookItem: Book) {
         Log.d(TAG, "bindItem - called")
+
+        itemView.setOnClickListener {
+            context = itemView.context
+            Intent(context, BookInfoActivity::class.java).apply {
+                putExtra("title", bookItem.title)
+                putExtra("image", bookItem.coverLargeUrl)
+                putExtra("author", bookItem.author)
+                putExtra("publisher", bookItem.publisher)
+                putExtra("description", bookItem.description)
+                putExtra("url", bookItem.mobileLink)
+            }.run {
+                context.startActivity(this)
+                Log.d(TAG, "bindItem - called  intent success / item : $bookItem")
+            }
+        }
+
         titleText.text = bookItem.title
         rankText.text = bookItem.rank
         authorText.text = bookItem.author

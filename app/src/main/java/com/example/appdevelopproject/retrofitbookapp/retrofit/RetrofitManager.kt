@@ -16,6 +16,7 @@ class RetrofitManager {
     companion object {
         val instance = RetrofitManager()    // instance로 retrofitManager 가져올수 잇음
     }
+    lateinit var bookList:ArrayList<Book>
 
     fun searchBooks(completion: (RESPONSE_STATE, ArrayList<Book>?) -> Unit) {
         var retrofitInterface: RetrofitInterface?
@@ -29,7 +30,7 @@ class RetrofitManager {
                     return
                 }
                 response.body().let {
-                    val bookList = ArrayList<Book>()
+                    bookList = arrayListOf()
                     val body = it?.asJsonObject
                     val results = body?.getAsJsonArray("item")
 
@@ -43,9 +44,10 @@ class RetrofitManager {
                         val mobileLink = bookItemObject.get("mobileLink").asString
                         val customerReviewRank = bookItemObject.get("customerReviewRank").asFloat
                         val rank = bookItemObject.get("rank").asString
+                        val description = bookItemObject.get("description").asString
 
                         val book = Book(
-                            title, publisher, author, coverLargeUrl, mobileLink, customerReviewRank, rank
+                            title, publisher, author, coverLargeUrl, mobileLink, customerReviewRank, rank, description
                         )
                         bookList.add(book)
                     }

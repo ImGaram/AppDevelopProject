@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appdevelopproject.R
 import com.example.appdevelopproject.retrofitbookapp.data.Book
 
-class BestSellerRecyclerViewAdapter(var bookList: ArrayList<Book>): RecyclerView.Adapter<BestSellerViewHolder>() {
+class BestSellerRecyclerViewAdapter(private var bookList:ArrayList<Book>): RecyclerView.Adapter<BestSellerViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.best_seller_item, parent, false)
         return BestSellerViewHolder(view)
@@ -14,6 +15,7 @@ class BestSellerRecyclerViewAdapter(var bookList: ArrayList<Book>): RecyclerView
 
     override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
         holder.bindItem(this.bookList[position])
+
     }
 
     override fun getItemCount(): Int {
