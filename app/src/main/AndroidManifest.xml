@@ -13,18 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDevelopProject">
         <activity
-            android:name=".sharedpreferencechattingapp.ChattingActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".SharedPreferenceActivity"
-            android:exported="true">
+            android:name=".practice.DaggerHiltActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sharedpreferencechattingapp.ChattingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".SharedPreferenceActivity"
+            android:exported="true" />
         <activity
             android:name=".retrofitbookapp.BookInfoActivity"
             android:exported="false" />
