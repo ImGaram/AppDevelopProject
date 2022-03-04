@@ -1,4 +1,4 @@
-package com.example.appdevelopproject.daggerhiltapp.di
+package com.example.appdevelopproject.daggerhiltapp.module
 
 import android.content.Context
 import com.example.appdevelopproject.daggerhiltapp.BaseApplication
