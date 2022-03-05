@@ -1,7 +1,7 @@
-package com.example.appdevelopproject.daggerhiltapp
+package com.example.appdevelopproject.daggerhiltapppractice
 
 import androidx.fragment.app.Fragment
-import com.example.appdevelopproject.daggerhiltapp.di.SomeClass
+import com.example.appdevelopproject.daggerhiltapppractice.di.SomeClass
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

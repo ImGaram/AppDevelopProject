@@ -1,8 +1,8 @@
-package com.example.appdevelopproject.daggerhiltapp.di
+package com.example.appdevelopproject.daggerhiltapppractice.di
 
 
-import com.example.appdevelopproject.daggerhiltapp.module.Impl1
-import com.example.appdevelopproject.daggerhiltapp.module.Impl2
+import com.example.appdevelopproject.daggerhiltapppractice.module.Impl1
+import com.example.appdevelopproject.daggerhiltapppractice.module.Impl2
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 

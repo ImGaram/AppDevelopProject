@@ -1,8 +1,8 @@
-package com.example.appdevelopproject.daggerhiltapp.module
+package com.example.appdevelopproject.daggerhiltapppractice.module
 
-import com.example.appdevelopproject.daggerhiltapp.di.SomeInterface
-import com.example.appdevelopproject.daggerhiltapp.implementation.SomeInterfaceImpl1
-import com.example.appdevelopproject.daggerhiltapp.implementation.SomeInterfaceImpl2
+import com.example.appdevelopproject.daggerhiltapppractice.di.SomeInterface
+import com.example.appdevelopproject.daggerhiltapppractice.implementation.SomeInterfaceImpl1
+import com.example.appdevelopproject.daggerhiltapppractice.implementation.SomeInterfaceImpl2
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.appdevelopproject" >
+    package="com.example.appdevelopproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".daggerhiltapp.BaseApplication"
+        android:name=".daggerhiltapppractice.BaseApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppDevelopProject" >
+        android:theme="@style/Theme.AppDevelopProject">
         <activity
-            android:name=".DaggerHiltActivity"
+            android:name=".DaggerHiltPracticeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

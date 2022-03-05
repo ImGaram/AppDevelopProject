@@ -1,6 +1,6 @@
-package com.example.appdevelopproject.daggerhiltapp.implementation
+package com.example.appdevelopproject.daggerhiltapppractice.implementation
 
-import com.example.appdevelopproject.daggerhiltapp.di.SomeInterface
+import com.example.appdevelopproject.daggerhiltapppractice.di.SomeInterface
 import javax.inject.Inject
 
 class SomeInterfaceImpl1 @Inject constructor(): SomeInterface { // 2

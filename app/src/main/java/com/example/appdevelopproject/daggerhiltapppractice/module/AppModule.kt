@@ -1,7 +1,7 @@
-package com.example.appdevelopproject.daggerhiltapp.module
+package com.example.appdevelopproject.daggerhiltapppractice.module
 
 import android.content.Context
-import com.example.appdevelopproject.daggerhiltapp.BaseApplication
+import com.example.appdevelopproject.daggerhiltapppractice.BaseApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
