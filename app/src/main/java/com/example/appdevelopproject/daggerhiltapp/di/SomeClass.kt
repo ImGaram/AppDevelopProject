@@ -1,16 +1,21 @@
 package com.example.appdevelopproject.daggerhiltapp.di
 
-import com.example.appdevelopproject.daggerhiltapp.implementation.SomeInterfaceImpl
-import com.google.gson.Gson
+
+import com.example.appdevelopproject.daggerhiltapp.module.Impl1
+import com.example.appdevelopproject.daggerhiltapp.module.Impl2
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
-@ActivityScoped
+@ActivityScoped     // 4
 class SomeClass @Inject constructor(
-    private val someInterfaceImpl: SomeInterfaceImpl,
-    private val gson: Gson
+    @Impl1 private val someInterfaceImpl1: SomeInterface,
+    @Impl2 private val someInterfaceImpl2: SomeInterface
 ){  // 생성자 주입
-    fun doAThing(): String {
-        return "Look I got: ${someInterfaceImpl.getATing()}"   // getATing이 가지는 모든 걸 반환
+    fun doAThing1(): String {
+        return "Look I got: ${someInterfaceImpl1.getATing()}"   // getATing이 가지는 모든 걸 반환
+    }
+
+    fun doAThing2(): String {
+        return "Look I got: ${someInterfaceImpl2.getATing()}"
     }
 }

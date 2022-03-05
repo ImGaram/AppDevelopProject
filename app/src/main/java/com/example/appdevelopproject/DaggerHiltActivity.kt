@@ -9,7 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class DaggerHiltActivity : AppCompatActivity() {
+class DaggerHiltActivity : AppCompatActivity() {    // 5
     private val TAG = "DaggerHiltActivity"
 
     @Inject
@@ -24,7 +24,8 @@ class DaggerHiltActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dagger_hilt)
 
-        Log.d(TAG, "onCreate: ${someClass.doAThing()}")
+        Log.d(TAG, "onCreate: ${someClass.doAThing1()}")
+        Log.d(TAG, "onCreate: ${someClass.doAThing2()}")
         Log.d(TAG, "onCreate: $someRandomString")
         Log.d(TAG, "onCreate: $app")
     }
