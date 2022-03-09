@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/drawable/ic_baseline_insert_photo_24.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.1495" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/drawable/ic_github_logo_icon.xml" value="0.1495" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_book_info.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_chatting.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_dagger_hilt.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_retrofit.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_rxjava_retrofit.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_shared_preference.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/activity_shared_proference.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/AppDevelopProject/app/src/main/res/layout/best_seller_item.xml" value="0.29411764705882354" />

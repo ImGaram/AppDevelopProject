@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDevelopProject">
         <activity
-            android:name=".DaggerHiltPracticeActivity"
+            android:name=".RxjavaRetrofitActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DaggerHiltPracticeActivity"
+            android:exported="true" />
         <activity
             android:name=".sharedpreferencechattingapp.ChattingActivity"
             android:exported="true"
