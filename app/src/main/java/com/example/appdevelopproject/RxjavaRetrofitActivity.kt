@@ -1,12 +1,16 @@
 package com.example.appdevelopproject
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.appdevelopproject.databinding.ActivityRxjavaRetrofitBinding
 import com.example.appdevelopproject.rxjavaretrofitapp.GithubClient
+import com.example.appdevelopproject.rxjavaretrofitapp.UserInfoActivity
+import com.example.appdevelopproject.rxjavaretrofitapp.data.GithubUserInfo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -39,6 +43,14 @@ class RxjavaRetrofitActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ items ->
                 Log.d(TAG, "success: $items")
+                val intent = Intent(this, UserInfoActivity::class.java)
+                    .putExtra("name", items.name)
+                    .putExtra("login", items.login)
+                    .putExtra("avatarUrl", items.avatarUrl)
+                    .putExtra("htmlUrl", items.htmlUrl)
+                    .putExtra("followers", items.followers)
+                    .putExtra("following", items.following)
+                startActivity(intent)
             }, { e ->
                 Log.d(TAG, "failed: $e")
             })

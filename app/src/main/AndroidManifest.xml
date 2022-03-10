@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDevelopProject">
         <activity
+            android:name=".rxjavaretrofitapp.UserInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".RxjavaRetrofitActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
