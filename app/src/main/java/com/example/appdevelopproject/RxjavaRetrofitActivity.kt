@@ -3,14 +3,12 @@ package com.example.appdevelopproject
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.appdevelopproject.databinding.ActivityRxjavaRetrofitBinding
 import com.example.appdevelopproject.rxjavaretrofitapp.GithubClient
 import com.example.appdevelopproject.rxjavaretrofitapp.UserInfoActivity
-import com.example.appdevelopproject.rxjavaretrofitapp.data.GithubUserInfo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
