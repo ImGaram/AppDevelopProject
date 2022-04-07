@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppDevelopProject">
         <activity
             android:name=".roomchatapp.LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

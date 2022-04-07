@@ -6,8 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_table")
 class UserEntity(
-    @PrimaryKey var id: String?,
+    @PrimaryKey(autoGenerate = true) var uid: Long?,
+    @ColumnInfo(name = "id") var id: String,
     @ColumnInfo(name = "username") var username: String
 ) {
-    constructor(): this(null, "")
+    constructor(): this(null, "", "")
 }

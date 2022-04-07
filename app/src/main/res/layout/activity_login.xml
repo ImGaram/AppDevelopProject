@@ -22,7 +22,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_account_circle_24"
+        android:background="#e5e5e5"
         android:layout_margin="40dp"/>
 
     <EditText
