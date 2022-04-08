@@ -6,10 +6,11 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_table")
 class UserEntity(
-    @PrimaryKey(autoGenerate = true) var uid: Int = 0,
-    @ColumnInfo(name = "id") var id: String,
-    @ColumnInfo(name = "username") var username: String,
-    @ColumnInfo(name = "profileImg") var profileImg: String
+    @PrimaryKey(autoGenerate = true) var uid: Int = 0,      // user number
+    @ColumnInfo(name = "id") var id: String,                // id
+    @ColumnInfo(name = "username") var username: String,    // username
+    @ColumnInfo(name = "profileImg") var profileImg: String,// profile image
+    @ColumnInfo(name = "comment") var comment: String
 ) {
-    constructor(): this(0, "", "", "")  // default 값
+    constructor(): this(0, "", "", "", "")  // default 값
 }
