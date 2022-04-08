@@ -19,7 +19,6 @@ abstract class UserDbBuilder: RoomDatabase() {
                 synchronized(UserDbBuilder::class) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         UserDbBuilder::class.java, "user_table")
-                        .fallbackToDestructiveMigration()
                         .build()
                 }
             }

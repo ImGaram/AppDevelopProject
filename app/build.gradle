@@ -44,6 +44,9 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
 
+    // coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+
     // image crop
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 
