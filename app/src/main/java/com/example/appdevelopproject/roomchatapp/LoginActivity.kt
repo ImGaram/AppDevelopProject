@@ -56,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
                     binding.selectImage.setImageBitmap(result.bitmap)
                     binding.selectImage.setImageURI(result.uri)
                     uri = result.uri
-                    userEntity.profileImg = uri.toString()
                     Log.d("TAG", "onActivityResult image url: $uri")
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                     Toast.makeText(this, "문제가 발생했습니다, 다시 시도해 주세요.", Toast.LENGTH_SHORT).show()

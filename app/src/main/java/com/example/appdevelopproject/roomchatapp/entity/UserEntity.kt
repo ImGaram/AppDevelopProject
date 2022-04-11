@@ -9,8 +9,7 @@ class UserEntity(
     @PrimaryKey(autoGenerate = true) var uid: Int = 0,      // user number
     @ColumnInfo(name = "id") var id: String,                // id
     @ColumnInfo(name = "username") var username: String,    // username
-    @ColumnInfo(name = "profileImg") var profileImg: String,// profile image
     @ColumnInfo(name = "comment") var comment: String
 ) {
-    constructor(): this(0, "", "", "", "")  // default 값
+    constructor(): this(0, "", "", "")  // default 값
 }

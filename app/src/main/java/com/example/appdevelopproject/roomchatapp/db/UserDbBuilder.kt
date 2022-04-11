@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.appdevelopproject.roomchatapp.entity.UserDao
 import com.example.appdevelopproject.roomchatapp.entity.UserEntity
 
-@Database(entities = [UserEntity::class], version = 1)
+@Database(entities = [UserEntity::class], version = 2)
 abstract class UserDbBuilder: RoomDatabase() {
     abstract fun userDao(): UserDao
 
@@ -19,6 +19,7 @@ abstract class UserDbBuilder: RoomDatabase() {
                 synchronized(UserDbBuilder::class) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         UserDbBuilder::class.java, "user_table")
+                        .fallbackToDestructiveMigration()
                         .build()
                 }
             }
