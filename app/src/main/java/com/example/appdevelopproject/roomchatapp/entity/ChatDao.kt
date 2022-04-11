@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface ChatDao {
     // 전체 선택 쿼리
-    @Query("SELECT * FROM user_table")
+    @Query("SELECT * FROM chat_table")
     fun getAll(): List<ChatEntity>
 
     // 삽입 쿼리

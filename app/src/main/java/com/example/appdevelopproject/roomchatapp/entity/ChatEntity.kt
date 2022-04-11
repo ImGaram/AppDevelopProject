@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Chat_table")
+@Entity(tableName = "chat_table")
 class ChatEntity(
     @PrimaryKey(autoGenerate = true) var uid: Long,
     @ColumnInfo(name = "sendId") var sendId: String,        // 보낸 사람의 id
