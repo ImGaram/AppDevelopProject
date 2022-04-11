@@ -48,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
             pickImageFromAlbum -> {
                 uri = data?.data
                 binding.selectImage.setImageURI(uri)
+                Log.d("TAG", "onActivityResult image url: $uri")    // 이미지 주소
             }
 
             CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE -> {
@@ -55,8 +56,7 @@ class LoginActivity : AppCompatActivity() {
                 if (requestCode == Activity.RESULT_OK) {
                     binding.selectImage.setImageBitmap(result.bitmap)
                     binding.selectImage.setImageURI(result.uri)
-                    uri = result.uri
-                    Log.d("TAG", "onActivityResult image url: $uri")
+                    Log.d("TAG", "onActivityResult image url: $result")
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                     Toast.makeText(this, "문제가 발생했습니다, 다시 시도해 주세요.", Toast.LENGTH_SHORT).show()
                 }
@@ -70,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
         val username = binding.userUsername.text.toString()
 
         // 값이 비지 않은 경우
+        val intent = Intent(this, RoomChatActivity::class.java)
         if (id.isNotEmpty() && username.isNotEmpty()) {
             userEntity.id = id
             userEntity.username = username
@@ -84,7 +85,8 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("TEST", "get all user [SUCCESS]: $user")
             }
 
-            startActivity(Intent(this, RoomChatActivity::class.java))
+            intent.putExtra("id", id)
+            startActivity(intent)
         } else {    // 빈 경우
             Toast.makeText(this, "모두 입력 하세요", Toast.LENGTH_SHORT).show()
         }
