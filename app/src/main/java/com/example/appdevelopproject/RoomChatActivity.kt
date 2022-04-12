@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.appdevelopproject.databinding.ActivityRoomChatBinding
 import com.example.appdevelopproject.roomchatapp.db.ChatDbBuilder
 import com.example.appdevelopproject.roomchatapp.entity.ChatEntity
@@ -16,10 +17,15 @@ import java.util.*
 class RoomChatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRoomChatBinding
+
     private lateinit var chatDbBuilder: ChatDbBuilder
     private lateinit var chatList: List<ChatEntity>
     private lateinit var chatDb: ChatDbBuilder
+
     private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ChattingRecyclerAdapter
+
+    private lateinit var r: Runnable
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,11 +34,27 @@ class RoomChatActivity : AppCompatActivity() {
 
         chatDbBuilder = ChatDbBuilder.getInstance(this)!!
         chatDb = ChatDbBuilder.getInstance(this)!!
-        var adapter: ChattingRecyclerAdapter
         binding.chatUserId.text = intent.getStringExtra("id").toString()
-        Log.d("TAG", "intent putExtra: ${intent.getStringExtra("image")}")
 
-        val r = Runnable {
+        setRecyclerView()
+        binding.swipe.setOnRefreshListener {
+            val thread = Thread(r)
+            thread.interrupt()  // 스레드 중지
+            setRecyclerView()
+            binding.swipe.isRefreshing = false  // 새로고침 완료
+        }
+
+        binding.imageSendComment.setOnClickListener {
+            if (binding.chatComment.text.isNotEmpty()) {
+                addData()
+            } else {
+                Toast.makeText(this, " 비었어요", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setRecyclerView() {
+        r = Runnable {
             try {
                 chatList = chatDb.chatDao().getAll()
                 adapter = ChattingRecyclerAdapter(this, chatList)
@@ -43,14 +65,6 @@ class RoomChatActivity : AppCompatActivity() {
                 recyclerView.setHasFixedSize(true)
             } catch (e: Exception) {
                 Log.e("ERROR", "$e")
-            }
-        }
-
-        binding.imageSendComment.setOnClickListener {
-            if (binding.chatComment.text.isNotEmpty()) {
-                addData()
-            } else {
-                Toast.makeText(this, " 비었어요", Toast.LENGTH_SHORT).show()
             }
         }
 
