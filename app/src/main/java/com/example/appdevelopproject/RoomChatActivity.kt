@@ -16,6 +16,7 @@ import java.util.*
 class RoomChatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRoomChatBinding
+    private lateinit var chatDbBuilder: ChatDbBuilder
     private lateinit var chatList: List<ChatEntity>
     private lateinit var chatDb: ChatDbBuilder
     private lateinit var recyclerView: RecyclerView
@@ -23,6 +24,9 @@ class RoomChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRoomChatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        chatDbBuilder = ChatDbBuilder.getInstance(this)!!
         chatDb = ChatDbBuilder.getInstance(this)!!
         var adapter: ChattingRecyclerAdapter
         binding.chatUserId.text = intent.getStringExtra("id").toString()
@@ -44,6 +48,7 @@ class RoomChatActivity : AppCompatActivity() {
 
         binding.imageSendComment.setOnClickListener {
             if (binding.chatComment.text.isNotEmpty()) {
+                binding.chatComment.text = null // 입력값 비우기
                 addData()
             } else {
                 Toast.makeText(this, " 비었어요", Toast.LENGTH_SHORT).show()
@@ -52,20 +57,18 @@ class RoomChatActivity : AppCompatActivity() {
 
         val thread = Thread(r)
         thread.start()
-        setContentView(binding.root)
     }
 
     private fun addData() {
         val addRunnable = Runnable {
             val newChat = ChatEntity()
-            // TODO :: intent 값 받아오기
             newChat.sendId = intent.getStringExtra("id").toString()
             newChat.comment = binding.chatComment.text.toString()
 
             // 시간 구하기
             val now = System.currentTimeMillis()
             val date = Date(now)
-            val dateFormat = SimpleDateFormat("MM/dd hh:ss")
+            val dateFormat = SimpleDateFormat("MM/dd hh:ss", Locale.KOREA)
             val getTime = dateFormat.format(date)
 
             newChat.sendTime = getTime.toString()
