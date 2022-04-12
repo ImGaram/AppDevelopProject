@@ -48,7 +48,6 @@ class RoomChatActivity : AppCompatActivity() {
 
         binding.imageSendComment.setOnClickListener {
             if (binding.chatComment.text.isNotEmpty()) {
-                binding.chatComment.text = null // 입력값 비우기
                 addData()
             } else {
                 Toast.makeText(this, " 비었어요", Toast.LENGTH_SHORT).show()
@@ -64,6 +63,7 @@ class RoomChatActivity : AppCompatActivity() {
             val newChat = ChatEntity()
             newChat.sendId = intent.getStringExtra("id").toString()
             newChat.comment = binding.chatComment.text.toString()
+            Log.d("TEST", "addData comment: ${newChat.comment}")
 
             // 시간 구하기
             val now = System.currentTimeMillis()
